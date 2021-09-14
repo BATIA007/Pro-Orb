@@ -1218,3 +1218,9 @@ body {
     margin: 0 auto 20px;
   }
 }
+
+@media screen and (max-width:420px) {
+    .info__tabs {
+        column-gap: 15px;
+    }
+}
