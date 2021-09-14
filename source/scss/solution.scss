@@ -1,0 +1,1053 @@
+@import '_nullstyle.scss';
+
+$maxWidth: 1440;
+
+@mixin font($pc, $mob) {
+    $add: $pc - $mob;
+    $addMob: $add + $add * 0.7;
+    @media screen and (max-width:767px) {
+        font-size: calc(#{$mob + px} + #{$addMob} * ((100vw - 320px) / #{$maxWidth}));
+    }
+    @media screen and (min-width:767px) {
+        font-size: calc(#{$mob + px} + #{$add} * (100vw / #{$maxWidth}));
+    }
+}
+
+body {
+    background-color: #0C131B;
+    font-family: "Montserrat";
+    font-weight: 400;
+    @include font(16, 14);
+    line-height: 150%;
+    font-style: normal;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    width: 85%;
+    margin: 0 auto;
+}
+
+/* HEADER */
+
+.header {
+
+    background-color: #0C131B;
+    width: 100%;
+    line-height: 1;
+    padding: 30.5px 0 35px 0;
+
+    &__wrapper {
+        position: relative;
+    }
+
+    &__navigation {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__burger {
+        display: none;
+    }
+
+    &__list {
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        column-gap: 48px;
+        text-transform: uppercase;
+    }
+
+    &__link a {
+        display: inline-block;
+        color: #ffffff;
+        user-select: none;
+        padding: 5px;
+        transition: all 0.2s;
+        
+        &:hover {
+            color: rgba(255,255,255,0.6);
+        }
+        &:active {
+            transform: scale(0.9);
+        }
+    }
+
+    &__link-active {
+        font-weight: 700;
+    }
+
+    &__switch-list {
+        cursor: pointer;
+        color: #ffffff;
+        user-select: none;
+        transition: all 0.2s;
+
+        i {
+            margin-left: 10px;
+        }
+        
+        &:hover {
+            color: rgba(255,255,255,0.6);
+
+            .header__list-container {
+                overflow: visible;
+                width: 330px;
+                opacity: 1;
+            }
+
+            .header__list-child {
+                border-left: 2px solid #000;
+            }
+        }
+    }
+
+    &__list-container {
+        position: absolute;
+        left: 0;
+        top: 25px;
+        width: 0;
+        opacity: 0;
+        z-index: 200;
+        transition: all 0.5s;
+    }
+
+    &__list-child {
+        overflow: hidden;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        background-color: #0c131be6;
+    }
+
+    &__link-child a {
+        padding: 10px 0 10px 20px;
+        width: 100%;
+        line-height: 1.4;
+        text-transform: capitalize;
+        border-bottom: 1px solid #000;
+        white-space: nowrap;
+        font-weight: 400;
+    }
+
+    &__link-child-active a {
+        font-weight: 700;
+    }
+
+    &__logo {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    &__shop-profile {
+        display: flex;
+        column-gap: 55px;
+        margin-left: auto;
+
+        a svg path {
+            user-select: none;
+            transition: all 0.2s;
+        }
+
+        a svg:hover {
+            path {
+                fill: rgba(255,255,255,0.6) !important;
+            }
+        }      
+    }
+}
+
+
+
+
+/* **************************************************************************       HEALTHCARE PAGE        ***************************************************************** */
+
+
+.preview {
+    background: #0C131B url("../images/healthcare/preview.jpg") no-repeat;
+    background-size: cover;
+    min-height: 360px;
+
+    &__wrapper {
+        position: relative;
+        min-height: 360px;
+    }
+
+    &__title {
+        font-weight: 400;
+        @include font(48, 32);
+        position: absolute;
+        left: 0;
+        line-height: 1.3;
+        bottom: 20px;
+    }
+}
+
+
+
+.covid {
+    padding:80px 0;
+    background-color: #0C131B;
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 55% 45%;
+        justify-content: space-between;
+        column-gap: 50px;
+        align-items: center;
+    }
+
+    &__title {
+        @include font(36, 28);
+        line-height: 1.3;
+        margin-bottom: 17px;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+    }
+
+    &__text {
+        font-weight: 300;
+        @include font(15, 14);
+    }
+
+
+    &__image {
+        width: 100%;
+        max-width: 550px;
+        height: 100%;
+    }
+}
+
+
+
+
+.infos {
+    background-color: #0C131B;
+
+    &__wrapper {
+        background-color: #070B10;
+        padding:56px 150px 56px 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        column-gap: 40px;
+    }
+
+    &__image {
+        min-width: 170px;
+    }
+
+    &__title {
+        @include font(36, 24);
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    &__text {
+        font-weight: 300;
+        @include font(15, 14);
+    }
+}
+
+
+
+.solution {
+    background-color: #0C131B;
+    padding: 70px 0 80px;
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 55px;
+    }
+
+    &__title {
+        @include font(36, 28);
+        line-height: 1.2;
+        max-width: 500px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 23px;
+    }
+
+    &__link {
+        font-weight: 300;
+        @include font(24, 18);
+        line-height: 1.3;
+        margin-left: 30px;
+        position: relative;
+
+        &::before {
+            content: '.';
+            display: inline-block;
+            position: absolute;
+            font-size: 52px;
+            left: -28px;
+            top: 0;
+            line-height: 1px;
+        }
+    }
+}
+
+
+
+
+
+
+
+/* **************************************************************************       AVIATION PAGE        ***************************************************************** */
+
+.preview__aviation {
+    background: #0C131B url('../images/aviation/preview.jpg') no-repeat;
+    background-size: cover;
+}
+
+.preview {
+    &__title-aviation {
+        text-transform: uppercase;
+    }
+}
+
+.covid__aviation {
+    background-color: #0D1E32;
+    .covid__wrapper {
+        grid-template-columns: 45% 55%;
+        justify-content: center;
+    }
+
+    .covid__left {
+        text-align: center;
+    }
+}
+
+
+
+.aviation {
+    padding: 53px 0 46px;
+    background-color: #0C131B;
+
+    &__title {
+        @include font(24, 18);
+        line-height: 1.3;
+        margin-bottom: 16px;
+    }
+
+    &__text {
+        @include font(15, 14);
+        font-weight: 300;
+    }
+}
+
+
+.inform {
+    padding: 75px 0 32px;
+    background-color: #0C131B;
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        column-gap: 120px;
+    }
+
+    &__left {
+        max-width: 800px;
+    }
+
+    &__title {
+        @include font(36, 28);
+        margin-bottom: 16px;
+        line-height: 1.1;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+    }
+
+    &__text {
+        @include font(15, 14);
+    }
+
+    &__right {
+        min-width: 400px;
+        max-width: 500px;
+    }
+
+    &__image {
+        width: 100%;
+    }
+}
+
+
+
+
+.company {
+    background-color: #070B10;
+    padding: 56px 0;
+
+    &__top {
+        display: grid;
+        grid-template-columns: 384px 376px;
+        column-gap: 35px;
+        align-items: flex-end;
+        margin-bottom: 50px;
+    }
+
+    &__title-1 {
+        @include font(36, 28);
+        line-height: 1.2;
+    }
+
+    &__subtitle {
+        @include font(18, 16);
+        line-height: 1.3;
+    }
+
+    &__list {
+        display: grid;
+        align-items: flex-start;
+        justify-content: flex-start;
+        column-gap: 37px;
+        margin-bottom: 40px;
+    }
+
+    &__list-4 {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    &__image-container {
+        text-align: left;
+    }
+
+    &__image {
+        width: 100px;
+        height: 100px;
+    }
+
+    &__title {
+        font-weight: 700;
+        margin-top: 5px;
+        margin-bottom: 8px;
+    }
+
+    &__text {
+        font-weight: 300;
+        @include font(15, 14);
+    }
+
+    &__list-3 {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &__list-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+.solution__aviation {
+    background-image: radial-gradient(circle, rgba(24,37,53,1) 0%, rgba(12,19,27,1) 40%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -25vw center;
+}
+
+
+
+
+
+
+
+/* **************************************************************************       CORPORATION PAGE        ***************************************************************** */
+
+
+.main__about {
+    height: 360px;
+    background: url("../images/corporation/logo.jpg") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    padding-top: 5px;
+}
+
+
+.about__text {
+    @include font(48, 32);
+    line-height: 57px;
+    color:#ffffff;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 30px;
+    line-height: 1;
+    left: 0;
+    font-weight: lighter;
+    
+}
+
+.about__container {
+    height: 100%;
+    position: relative;
+}
+
+.main__info {
+    background-color: #0C131B;
+}
+
+
+.main__info-blocks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 83px 0 0 0;
+    gap: 48px;
+    
+    
+}
+
+.main__info-block {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+
+
+.main__info-text {
+    @include font(36, 28);
+    line-height: 44px;
+    margin-bottom: 20px;
+}
+
+.main__info-subtext {
+    font-weight: 300;
+    @include font(15, 14);
+    line-height: 150%;
+}
+
+.main__info-image {
+    max-width: 550px;
+    width: 100%;
+}
+
+.main__tagline-blocks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: 60px;
+    padding: 165px 142px 85px 47px;
+}
+
+
+
+
+.main__tagline-text {
+    @include font(36, 28);
+    line-height: 44px;
+}
+
+.main__tagline-subtext {
+    font-weight: 300;
+    @include font(24, 18);
+    line-height: 29px;
+    margin: 24px 0px;   
+}
+
+
+
+
+
+
+
+/*  FOOTER  */
+
+.footer {
+    
+    background-color: #000000;
+    padding: 50px 0;
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-bottom: 36px;
+        border-bottom: 2px solid #4C4C4C;
+    }
+
+    &__socials {
+        display: flex;
+        column-gap: 20px;
+    }
+
+    &__link {
+        line-height: 26px;
+        color: #ffffff;
+        transition: all 0.2s;
+        padding: 5px;
+
+        &:hover {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        &:active {
+            color: rgba(255, 255, 255, 0.4);
+        }
+    }
+
+    &__bottom {
+        margin-top: 45px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+    &__list {
+        display: flex;
+        column-gap: 30px;
+    }
+
+    &__item a {
+        color: #fff;
+        transition: all 0.2s;
+
+        &:hover {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        &:active {
+            color: rgba(255, 255, 255, 0.4);
+        }
+    }
+
+    &__bold {
+        font-weight: 700;
+    }
+}
+
+
+
+@media screen and (max-width:1280px) {
+    .header {
+        &__navigation {
+            grid-template-columns: 2fr 1fr 2fr;
+        }
+    }
+
+    .footer {
+        &__bottom {
+            flex-direction: column;
+            row-gap: 15px;
+        }
+        &__copyright {
+            text-align: right;
+        }
+    }
+}
+
+
+
+
+
+
+
+@media screen and (max-width:1000px) {
+    .header {
+      position: fixed;
+      top: 0;
+      z-index: 9998;
+      padding:10px 0;
+
+      &__wrapper {
+          position: relative;
+      }
+
+      &__logo {
+          width: 100%;
+          text-align: center;
+      }
+
+      &__navigation {
+          display: block;
+      }
+
+      &__shop-profile {
+          position: absolute;
+          top: 0;
+          right: 0;
+      }
+
+      &__list {
+          padding-top: 20px;
+          width: 40%;
+          height: 100%;
+          color: #ccc;
+          position: fixed;
+          top: 0;
+          right: -40%;
+          transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          flex-direction: column;
+          background-color: darken(rgba(135, 207, 235, 0.819), 70%);
+          z-index: 9999;
+      }
+
+      &__list-container {
+          position: static;
+          opacity: 1;
+          width: auto;
+          height: auto;
+      }
+
+      &__switch-list {
+          padding: 20px 0 0px 20px;
+          width: 100%;
+      }
+
+      &__switch-list:hover {
+          color: #fff;
+
+          .header__list-container {
+              overflow: visible;
+              width: auto;
+              opacity: 1;
+          }
+
+          .header__list-child {
+              border:none;
+          }
+      }
+
+      &__list-child {
+          margin-top: 0;
+          margin-left: 30px;
+          overflow:visible;
+          background-color: transparent;
+      }
+
+      &__link:not(.header__switch-list) {
+          width: 100%;
+          border-bottom: 2px solid rgba(135, 207, 235, 0.445);
+
+          a {
+              width: 100%;
+              padding: 20px 0 20px 20px;
+              border-bottom: none;
+              white-space:normal;
+          }
+      }
+
+      &__list-child {
+          margin-top: 10px;
+          margin-bottom: 30px;
+
+          .header__link-child a {
+              border-bottom: 1px solid gray;
+          }
+      }
+      
+
+      &__list.animate {
+          right: 0;
+      }
+      
+      &__burger{
+          display: block;
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          width: 40px;
+          height: 40px;
+          cursor: pointer;
+        }
+        &__burger span, &__burger span:before, &__burger span:after{
+          width: 100%;
+          position: absolute;
+          height: 4px;
+          background: #ffffff;
+          display: block;
+          transition: .3s;
+          border-radius: 5px;
+        }
+        &__burger span:before{
+          content: "";
+          top: -12px;
+          transition: top 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        &__burger span{
+          top: 12px;
+        }
+        &__burger span:after{
+          content: "";
+          bottom: -12px;
+          transition: bottom 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        &__burger span.active:before{
+          content: "";
+          top: 0px;
+          transform: rotate(45deg);
+          transition: top 300ms, transform 300ms 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        &__burger span.active:after{
+          content: "";
+          bottom: 0;
+          transform: rotate(-45deg);
+          transition: bottom 300ms, transform 300ms 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        &__burger span.active{
+          background: rgba(255, 255, 255, 0); 
+        }
+    }
+}
+
+
+
+
+
+@media screen and (max-width:750px) {
+    .footer {
+        &__top {
+            flex-direction: column;
+            row-gap: 10px;
+        }
+
+        &__socials {
+            margin-left: auto;
+            flex-wrap: wrap;
+        }
+
+        &__bottom {
+            flex-direction: row;
+            align-items: flex-end;
+        }
+
+        &__list {
+            flex-direction: column;
+            row-gap: 7px;
+        }
+    }
+}
+
+
+
+
+
+@media screen and (max-width:700px) {
+    .header {
+        &__list {
+            min-width: 280px;
+            right: -280px;
+        }
+    }
+}
+
+
+
+
+
+@media screen and (max-width:500px) {
+    .wrapper {
+        width: 90%;
+    }
+
+    .header {
+        &__wrapper {
+            width: 90%;
+            margin:0 auto;
+        }
+
+        &__shop-profile {
+            column-gap: 10px;
+        }
+    }
+}
+
+
+/* **************************************************************************       HEALTH PAGE RESPONSIVE        ***************************************************************** */
+
+/*  RESPONSIVE CONTENT  */
+
+
+
+@media screen and (max-width:1000px) {
+    .covid {
+        &__wrapper {
+            grid-template-columns: 1fr;
+            justify-content: center;
+            row-gap: 50px;
+        }
+
+        &__image {
+            margin: 0 auto;
+        }
+
+        &__right {
+            text-align: center;
+        }
+
+        &.covid__aviation {
+            .covid__wrapper {
+                grid-template-columns: 1fr;
+                justify-content: center;
+                row-gap: 50px;
+            }
+
+            .covid__left {
+                text-align: center;
+            }
+
+            .covid__right {
+                text-align: left;
+            }
+        }
+    }
+
+    .infos {
+
+        background-color: #070B10;
+        padding: 50px 0 60px;
+        
+        &__wrapper {
+            flex-direction: column;
+            justify-content: center;
+            row-gap: 30px;
+            padding: 0;
+            background-color: transparent;
+        }
+
+        &__left {
+            text-align: center;
+            width: 100%;
+        }
+
+        &__image {
+            margin: 0 auto;
+        }
+    }
+
+    .solution {
+        &__wrapper {
+            flex-direction: column;
+            row-gap: 40px;
+        }
+
+        &__title {
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width:700px) {
+    .preview {
+        min-height: 400px;
+
+        &__wrapper {
+            min-height: 400px;
+        }
+    }
+}
+
+
+
+
+
+
+/* **************************************************************************       AVIATION PAGE RESPONSIVE        ***************************************************************** */
+
+
+@media screen and (max-width:1000px) {
+    .inform {
+        &__wrapper {
+            flex-direction: column;
+            row-gap: 50px;
+        }
+        &__right {
+            margin:0 auto;
+            min-width: auto;
+        }
+    }
+
+    .company {
+        &__top {
+            grid-template-columns: 1fr;
+            row-gap: 20px;
+        }
+
+        &__list-4 {
+            grid-template-columns: 1fr 1fr;
+            row-gap: 30px;
+        }
+
+        &__list-3 {
+            grid-template-columns: 1fr 1fr;
+            row-gap: 30px;
+        }
+    }
+
+    .solution__aviation {
+        background-image: radial-gradient(circle, #182535 0%, #0c131b 70%);
+    }
+}
+
+@media screen and (max-width:500px) {
+        .company {
+
+        &__list-4 {
+            grid-template-columns: 1fr;
+        }
+
+        &__list-3 {
+            grid-template-columns: 1fr;
+        }
+
+        &__list-2 {
+            grid-template-columns: 1fr;
+            row-gap: 30px;
+        }
+        &__image-container {
+            text-align: center;
+        }
+        &__title {
+            text-align: center;
+        }
+    }
+}
+
+
+
+
+
+/* **************************************************************************       CORPORATION PAGE RESPONSIVE        ***************************************************************** */
+
+
+
+@media screen and (max-width:1000px) {
+    .main__about {
+        margin-top: 50px;
+        height: 400px;
+    }
+
+    .main__info-blocks {
+        grid-template-columns: 1fr;
+        justify-content: center;
+        padding-top: 50px;
+    }
+
+    .main__info-image {
+        margin: 0 auto;
+    }
+
+    .main__tagline-blocks {
+        padding: 100px 0 50px 0;
+        grid-template-columns: 1fr;
+    }
+}
