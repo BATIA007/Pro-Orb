@@ -279,7 +279,7 @@ body {
 
 /* **************************************************************************       HEALTHCARE PAGE        ***************************************************************** */
 .preview {
-  background: #0C131B url("../images/healthcare/preview.jpg") no-repeat;
+  background: #0C131B url("../images/healthcare/preview.jpg") no-repeat 50% 50%;
   -webkit-background-size: cover;
           background-size: cover;
   min-height: 360px;
@@ -544,7 +544,7 @@ body {
 
 /* **************************************************************************       AVIATION PAGE        ***************************************************************** */
 .preview__aviation {
-  background: #0C131B url("../images/aviation/preview.jpg") no-repeat;
+  background: #0C131B url("../images/aviation/preview.jpg") no-repeat 50% 50%;
   -webkit-background-size: cover;
           background-size: cover;
 }
@@ -824,7 +824,7 @@ body {
 /* **************************************************************************       CORPORATION PAGE        ***************************************************************** */
 .main__about {
   height: 360px;
-  background: url("../images/corporation/logo.jpg") no-repeat center;
+  background: url("../images/corporation/logo.jpg") no-repeat 50% 50%;
   -webkit-background-size: cover;
           background-size: cover;
   width: 100%;
@@ -987,7 +987,7 @@ body {
 
 /* **************************************************************************       COMMUNITY PAGE        ***************************************************************** */
 .community {
-  background: #0C131B url("../images/community/logo.jpg") no-repeat;
+  background: #0C131B url("../images/community/logo.jpg") no-repeat 50% 50%;
   -webkit-background-size: cover;
           background-size: cover;
 }
