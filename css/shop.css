@@ -1118,7 +1118,7 @@ body {
 /* **************************************************************************       SHOP PAGE RESPONSIVE        ***************************************************************** */
 /*  RESPONSIVE CONTENT  */
 @media screen and (min-width: 1740px) {
-  .shop__image {
+  .shop__active .shop__image {
     margin-left: 20%;
   }
 }
