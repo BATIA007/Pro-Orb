@@ -273,9 +273,17 @@ body {
 
 /*   HERO  */
 .hero {
+  padding: 70px 0;
+  background-image: -webkit-radial-gradient(circle, #13335d 0%, #0d1e32 50%);
+  background-image: -o-radial-gradient(circle, #13335d 0%, #0d1e32 50%);
+  background-image: radial-gradient(circle, #13335d 0%, #0d1e32 50%);
+  background-color: #0D1E32;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-position: -23vw;
   -webkit-border-radius: 24px;
           border-radius: 24px;
-  background: #0D1E32;
   line-height: 59px;
   color: #fff;
 }
@@ -293,10 +301,6 @@ body {
 
 .hero__left {
   margin: 0 auto;
-  background: -webkit-radial-gradient(circle, #13335d 0%, #0d1e32 70%);
-  background: -o-radial-gradient(circle, #13335d 0%, #0d1e32 70%);
-  background: radial-gradient(circle, #13335d 0%, #0d1e32 70%);
-  padding: 200px;
   -webkit-border-radius: 50%;
           border-radius: 50%;
 }
@@ -1259,6 +1263,9 @@ input:focus:-ms-input-placeholder {
     -ms-grid-columns: 2fr 1fr 2fr;
         grid-template-columns: 2fr 1fr 2fr;
   }
+  .hero {
+    background-position: center -18vw;
+  }
   .hero__wrapper {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
@@ -1268,6 +1275,9 @@ input:focus:-ms-input-placeholder {
   }
   .hero__title {
     max-width: none;
+  }
+  .hero__left {
+    padding: 40px 0;
   }
   .features__wrapper {
     -ms-grid-columns: 1fr;
@@ -1471,9 +1481,12 @@ input:focus:-ms-input-placeholder {
   .header__burger span.active {
     background: rgba(255, 255, 255, 0);
   }
+  .hero {
+    padding-top: 40px;
+  }
   .hero__left {
     width: 100%;
-    padding: 150px;
+    max-width: 400px;
   }
   .hero__left img {
     width: 100%;
@@ -1565,8 +1578,8 @@ input:focus:-ms-input-placeholder {
   .header__logo svg {
     width: 120px;
   }
-  .hero__left {
-    padding: 100px;
+  .hero {
+    background-position: center -30vw;
   }
   .information {
     padding: 50px 0;
@@ -1607,6 +1620,9 @@ input:focus:-ms-input-placeholder {
   .wrapper {
     width: 90%;
   }
+  .hero {
+    background-position: center -40vw;
+  }
   .header__wrapper {
     width: 90%;
     margin: 0 auto;
@@ -1615,10 +1631,6 @@ input:focus:-ms-input-placeholder {
     -webkit-column-gap: 10px;
        -moz-column-gap: 10px;
             column-gap: 10px;
-  }
-  .hero__left {
-    padding: 50px;
-    margin-top: 50px;
   }
   .purpose__bottom {
     -ms-grid-columns: 1fr;
