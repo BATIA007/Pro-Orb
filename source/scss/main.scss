@@ -561,7 +561,7 @@ body {
 
     &__text {
         font-weight: 500;
-        @include font(24, 20);
+        @include font(24, 15);
         line-height: 150%;
         padding: 30px 30px 0;
         user-select: none;
@@ -977,6 +977,7 @@ input::-webkit-input-placeholder {
         &__list-child {
             margin-top: 10px;
             margin-bottom: 30px;
+            margin-left: 0;
 
             .header__link-child a {
                 border-bottom: 1px solid gray;
@@ -993,14 +994,14 @@ input::-webkit-input-placeholder {
             position: absolute;
             left: 0px;
             top: 0px;
-            width: 40px;
-            height: 40px;
+            width: 20px;
+            height: 20px;
             cursor: pointer;
           }
           &__burger span, &__burger span:before, &__burger span:after{
             width: 100%;
             position: absolute;
-            height: 4px;
+            height: 2px;
             background: #ffffff;
             display: block;
             transition: .3s;
@@ -1008,7 +1009,7 @@ input::-webkit-input-placeholder {
           }
           &__burger span:before{
             content: "";
-            top: -12px;
+            top: -7px;
             transition: top 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
           }
           &__burger span{
@@ -1016,7 +1017,7 @@ input::-webkit-input-placeholder {
           }
           &__burger span:after{
             content: "";
-            bottom: -12px;
+            bottom: -7px;
             transition: bottom 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
           }
 
@@ -1118,8 +1119,14 @@ input::-webkit-input-placeholder {
 @media screen and (max-width:700px) {
     .header {
         &__list {
-            min-width: 280px;
+            min-width: 210px;
             right: -280px;
+        }
+
+        &__logo {
+            svg {
+                width: 120px;
+            }
         }
     }
 
@@ -1186,6 +1193,15 @@ input::-webkit-input-placeholder {
     .purpose {
         &__bottom {
             grid-template-columns: 1fr;
+        }
+    }
+}
+
+
+@media screen and (max-width:400px) {
+    .blogs {
+        &__send {
+            min-width: 120px;
         }
     }
 }
